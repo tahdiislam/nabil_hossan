@@ -1,11 +1,12 @@
+import Gallery from "../Gallery/Gallery";
 import Faq from "./Faq";
 import Features from "./Featues";
-import TopBanner from "./TopBanner";
 
 function Home() {
   return (
     <>
-      <TopBanner />
+      {/* <TopBanner /> */}
+      <Gallery />
       <Features />
       <Faq />
     </>

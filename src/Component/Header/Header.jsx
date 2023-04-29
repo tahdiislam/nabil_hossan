@@ -1,10 +1,16 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
+  const [show, setShow] = useState(false);
   return (
     <header className="p-4 dark:bg-gray-800 dark:text-gray-100">
       <div className="container flex justify-between h-16 mx-auto md:justify-center md:space-x-8">
-        <ul className="items-stretch hidden space-x-3 md:flex">
+        <ul
+          className={`items-stretch space-x-3 md:flex ${
+            !show ? "hidden" : "block"
+          }`}
+        >
           <li className="flex">
             <Link
               rel="noopener noreferrer"
@@ -60,7 +66,12 @@ export const Header = () => {
             </Link>
           </li>
         </ul>
-        <button title="Button" type="button" className="p-4 md:hidden">
+        <button
+          onClick={() => setShow((prev) => !prev)}
+          title="Button"
+          type="button"
+          className="p-4 md:hidden"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
